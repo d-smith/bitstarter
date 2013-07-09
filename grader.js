@@ -70,10 +70,8 @@ if(require.main == module) {
 	.option('-f, --url <url>','Url of file to check')
         .parse(process.argv);
     var url = program.url;
-    console.log("url is " + url);
 
     if(url) {
-	console.log("processing url");
         rest.get(url).on('complete', function(result) {
 		if(result instanceof Error) {
 			console.log('Error: ' + result.message);
