@@ -7,6 +7,11 @@ app.get('/', function(request, response) {
   response.send(buf.toString());
 });
 
+var awsimg = fs.readFileSync("./aws-process-execution.png");
+app.get('/aws-process-execution.png', function(request, response) {
+  response.send(awsimg);
+});
+
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
